@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="css/index.min.css">
+    <title>Convert IMG</title>
+</head>
+
+<body>
+    <!-- Arrow of back -->
+    <a href="index.html" class="arrow_back">
+        <img src="assets/arrow.png" alt="" class="arrow_back_icon">
+    </a>
+    <!-- End arrow of back -->
+    
+    <!--Hey! This is the original version of Simple CSS Waves-->
+    <div class="header">
+        <!--Content before waves-->
+        <div class="inner-header flex" style="gap: 60px; flex-wrap: wrap; padding:40px;">
+            <!--Just the logo.. Don't mind this-->
+            <div class="container info">
+                <h1>Convierte imagenes</h1>
+                <!--Title-->
+                <!-- Content input path -->
+                <div class="container path">
+                    <button class="button input_folder" id="button-file-or-folder">Entrada</button>
+                    <input type="text" class="input input_path" id="input_folder_path" placeholder="Ruta de imagenes"
+                        readonly>
+                </div>
+                <!-- End content input path -->
+                <!-- Content input quality -->
+                <div class="container inputs">
+                    <label for="number-compress">Extencion de salida</label>
+                    <button class="button extencion" id="button_extencion_select">Extencion</button>
+                    <ul class="container list extension" id="list_extencion">
+                        <li>
+                            <h4>.jpg</h4>
+                        </li>
+                        <li>
+                            <h4>.png</h4>
+                        </li>
+                        <li>
+                            <h4>.webp</h4>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End content input quality -->
+                <!-- Content input prefig -->
+                <div class="container inputs">
+                    <label for="number-compress">Prefigo</label>
+                    <button class="button prefig" id="button_extencion_prefig">Prefig</button>
+                    <ul class="container list prefig" id="list_prefig">
+                        <li>
+                            <h4>[1, 2, 3, ...]</h4>
+                        </li>
+                        <li>
+                            <h4>Original</h4>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End content input prefig -->
+                <!-- Content output path -->
+                <div class="container path">
+                    <button class="button output_folder" id="button-file-or-folder_output">Salida</button>
+                    <input type="text" class="input output_path" id="output_folder_path" placeholder="Ruta destino"
+                        readonly>
+                </div>
+                <!-- End content aoutput path -->
+                <!-- <input type="text" class="input extencion" placeholder="Ruta destino"> -->
+                <button class="button compress" id="button-convert">Convertir</button>
+                <!--Button submit-->
+                <!-- Content loading -->
+                <div class="content_loading"></div>
+                <!-- End content loading -->
+            </div>
+        </div>
+        <!--Waves Container-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+    </div>
+
+    <!-- scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/buttonsSelect.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/getFolder.js"></script>
+    <script src="js/convert.js"></script>
+</body>
+
+</html>

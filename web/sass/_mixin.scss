@@ -1,0 +1,44 @@
+@mixin rounded($rounded_value) {
+  border-radius: $rounded_value;
+  -webkit-border-radius: $rounded_value;
+  -moz-border-radius: $rounded_value;
+  -ms-border-radius: $rounded_value;
+  -o-border-radius: $rounded_value;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin transition($duration_value) {
+  transition: all $duration_value;
+  -webkit-transition: all $duration_value;
+  -moz-transition: all $duration_value;
+  -ms-transition: all $duration_value;
+  -o-transition: all $duration_value;
+}
+
+@mixin rounded_dising($rounded_value) {
+  border-top-left-radius: $rounded_value;
+  border-top-right-radius: $rounded_value;
+  border-bottom-right-radius: $rounded_value;
+  border-bottom-left-radius: 0px;
+}
+
+@mixin transform($transform_value) {
+  transform: $transform_value;
+  -webkit-transform: $transform_value;
+  -moz-transform: $transform_value;
+  -ms-transform: $transform_value;
+  -o-transform: $transform_value;
+}
+
+@mixin flex($direccion, $justify, $items, $wrap, $gap) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $justify;
+  align-items: $items;
+  flex-wrap: $wrap;
+  gap: $gap;
+}

@@ -1,0 +1,10 @@
+@import "mixin";
+
+.input {
+  @include rounded(30px);
+  @include size(60%, auto);
+  padding: 5px;
+  background: #fefefe;
+  margin-left: 10px;
+  text-align: center;
+}
