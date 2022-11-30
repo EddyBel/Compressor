@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module imagen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>imagen</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ceduardo%5Cdocuments%5Cdev%5Ccompressor%5Cpython%5Cimagen.py">c:\users\eduardo\documents\dev\compressor\python\imagen.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PIL.Image.html">PIL.Image</a><br>
+</td><td width="25%" valign=top><a href="distutils.extension.html">distutils.extension</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="imagen.html#IMG">IMG</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IMG">class <strong>IMG</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#IMG">IMG</a>(path,&nbsp;prefig,&nbsp;quality,&nbsp;output_path,&nbsp;extension,&nbsp;count)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;contains&nbsp;all&nbsp;the&nbsp;image&nbsp;manipulation&nbsp;methods.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="IMG-__init__"><strong>__init__</strong></a>(self, path, prefig, quality, output_path, extension, count)</dt><dd><tt>Constructor&nbsp;which&nbsp;has&nbsp;all&nbsp;the&nbsp;variables&nbsp;to&nbsp;use.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path:&nbsp;Path&nbsp;where&nbsp;the&nbsp;images&nbsp;will&nbsp;be&nbsp;searched.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prefig:&nbsp;Extra&nbsp;name&nbsp;that&nbsp;the&nbsp;file&nbsp;will&nbsp;carry<br>
+&nbsp;&nbsp;&nbsp;&nbsp;quality:&nbsp;Quality&nbsp;to&nbsp;which&nbsp;it&nbsp;will&nbsp;be&nbsp;compressed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;output_path:&nbsp;Destination&nbsp;or&nbsp;departure&nbsp;route<br>
+&nbsp;&nbsp;&nbsp;&nbsp;extencion:&nbsp;Destination&nbsp;or&nbsp;departure&nbsp;route<br>
+&nbsp;&nbsp;&nbsp;&nbsp;count:&nbsp;Total&nbsp;converted&nbsp;files&nbsp;counter</tt></dd></dl>
+
+<dl><dt><a name="IMG-compress_img"><strong>compress_img</strong></a>(self, file, path, prefig, quality)</dt><dd><tt>Compress&nbsp;the&nbsp;images.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;(str):&nbsp;file&nbsp;name.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;(str):&nbsp;Path&nbsp;where&nbsp;the&nbsp;files&nbsp;are&nbsp;located.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prefig&nbsp;(str):&nbsp;String&nbsp;or&nbsp;name&nbsp;that&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;output&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;quality&nbsp;(int):&nbsp;Compression&nbsp;level.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Name&nbsp;file<br>
+&nbsp;<br>
+&nbsp;<br>
+Steps<br>
+------<br>
+-&nbsp;Separate&nbsp;the&nbsp;file&nbsp;with&nbsp;its&nbsp;extension&nbsp;and&nbsp;name.<br>
+-&nbsp;Define&nbsp;the&nbsp;routes&nbsp;to&nbsp;use&nbsp;and&nbsp;if&nbsp;the&nbsp;route&nbsp;does&nbsp;not&nbsp;exist,&nbsp;create&nbsp;it.<br>
+-&nbsp;Define&nbsp;the&nbsp;routes&nbsp;to&nbsp;use&nbsp;and&nbsp;if&nbsp;the&nbsp;route&nbsp;does&nbsp;not&nbsp;exist,&nbsp;create&nbsp;it.<br>
+-&nbsp;first&nbsp;validate&nbsp;that&nbsp;the&nbsp;file&nbsp;is&nbsp;an&nbsp;image,&nbsp;then&nbsp;access&nbsp;its&nbsp;image&nbsp;properties&nbsp;and&nbsp;validate&nbsp;that&nbsp;the&nbsp;image&nbsp;is&nbsp;rgb&nbsp;and&nbsp;not&nbsp;rgba&nbsp;if&nbsp;it&nbsp;is&nbsp;not&nbsp;so&nbsp;you&nbsp;convert&nbsp;it.<br>
+-&nbsp;At&nbsp;the&nbsp;end&nbsp;it&nbsp;saves&nbsp;the&nbsp;image&nbsp;with&nbsp;the&nbsp;parameters&nbsp;of&nbsp;the&nbsp;class&nbsp;previously&nbsp;marked.<br>
+-&nbsp;Print&nbsp;the&nbsp;conversion&nbsp;status</tt></dd></dl>
+
+<dl><dt><a name="IMG-convert_img"><strong>convert_img</strong></a>(self, file, path, prefig, quality)</dt><dd><tt>Print&nbsp;the&nbsp;conversion&nbsp;status.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;(str):&nbsp;file&nbsp;name.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;(str):&nbsp;Path&nbsp;where&nbsp;the&nbsp;files&nbsp;are&nbsp;located.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prefig&nbsp;(str):&nbsp;String&nbsp;or&nbsp;name&nbsp;that&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;output&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;quality&nbsp;(int):&nbsp;Compression&nbsp;level.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Name&nbsp;file</tt></dd></dl>
+
+<dl><dt><a name="IMG-for_files_of_path"><strong>for_files_of_path</strong></a>(self, cb)</dt><dd><tt>Method&nbsp;that&nbsp;traverses&nbsp;the&nbsp;entire&nbsp;list&nbsp;of&nbsp;files&nbsp;and&nbsp;executes&nbsp;a&nbsp;callback&nbsp;for&nbsp;each&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cb&nbsp;(function):&nbsp;Callback&nbsp;that&nbsp;receives&nbsp;(file,&nbsp;path,&nbsp;prefix&nbsp;and&nbsp;quality)&nbsp;parameters.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Literal(True):&nbsp;Validate&nbsp;that&nbsp;everything&nbsp;was&nbsp;executed&nbsp;correctly.</tt></dd></dl>
+
+<dl><dt><a name="IMG-get_files_of_path"><strong>get_files_of_path</strong></a>(self)</dt><dd><tt>Get&nbsp;all&nbsp;files&nbsp;by&nbsp;path.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list[str]&nbsp;:&nbsp;List&nbsp;of&nbsp;files&nbsp;obtained</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
