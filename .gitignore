@@ -2,5 +2,6 @@
 /env
 
 # Cache
-/_pycache_
-/python/_pycache_
+/__pycache__
+/python/__pycache__
+/functions/__pycache__

@@ -1,59 +1,242 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="/eel.js"></script>
-    <link rel="stylesheet" href="css/index.min.css">
-    <title>Convert IMG</title>
-</head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"
+      integrity="sha512-Olr8rkMYuxq3KpAPjYA/mAVYe7EIEP4RkhoAvD/qOrlauzE4CTvpQSg/cRX0/5Qreret4aobD0vg1xtjBqR7VA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.min.js"
+      integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background: #141414;
+      }
 
-<body>
-    <!--Hey! This is the original version of Simple CSS Waves-->
-    <div class="header">
-        <!--Content before waves-->
-        <div class="inner-header flex" style="gap: 60px; flex-wrap: wrap; padding:40px;">
-            <!--Just the logo.. Don't mind this-->
-            <div class="container info">
-                <h1>Herramientas</h1>
-                <div class="container cards" >
-                    <a class="direccion" href="conpress.html">
-                        Comprimir imagenes
-                    </a>
-                    <a class="direccion" href="convert.html">
-                        Convertir imagenes
-                    </a>
-                </div>
+      ::-webkit-scrollbar-thumb {
+        background: #000;
+      }
+    </style>
+    <title>Compressor</title>
+  </head>
+  <body class="bg-gray-950 min-h-screen">
+    <!-- Start Navigate -->
+
+    <nav class="border-gray-200 bg-gray-900 top-0 left-0 z-100 w-full">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="/" class="flex items-center">
+          <img src="./assets/Logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >FotoCompress</span
+          >
+        </a>
+        <!-- <button
+          data-collapse-toggle="navbar-default"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button> -->
+        <!-- <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                aria-current="page"
+                >Compressor</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+    <!-- End Navigate -->
+
+    <!-- Start Form -->
+    <section class="w-full min-h-screen">
+      <div
+        class="w-full max-w-[500px] rounded-lg bg-gray-900 p-5 min-h-[500px] m-auto mt-10"
+      >
+        <h1 class="text-gray-400 text-2xl uppercase text-center mb-8">
+          Comprime tus imagenes
+        </h1>
+        <div class="p-5">
+          <div>
+            <label
+              class="block mb-2 text-sm font-medium text-gray-400"
+              for="multiple_files"
+              >Upload multiple files</label
+            >
+            <input
+              class="block w-full text-sm border rounded-lg cursor-pointer text-gray-400 focus:outline-none bg-gray-950 border-gray-600 placeholder-gray-400"
+              id="multiple_imgs"
+              type="file"
+              multiple
+            />
+          </div>
+
+          <div class="mt-5">
+            <div
+              class="flex justify-between items-center w-full mb-2 text-gray-400"
+            >
+              <p>Min. quality</p>
+              <p id="percentage__value">50%</p>
+              <p>Max. quality</p>
             </div>
-        </div>
-        <!--Waves Container-->
-        <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                </g>
-            </svg>
-        </div>
-        <!--Waves end-->
-    </div>
+            <input
+              id="level_quality"
+              type="range"
+              value="50"
+              max="100"
+              min="0"
+              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+            />
+          </div>
 
-    <!-- scripts -->
-    <script src="js/utils.js"></script>
-    <script src="js/buttonsSelect.js"></script>
-    <script src="js/loading.js"></script>
-    <script src="js/getFolder.js"></script>
-    <script src="js/convert.js"></script>
-</body>
+          <div class="relative z-0 w-full mb-6 mt-8 group">
+            <input
+              type="text"
+              name="floating_first_name"
+              id="input_prefix_image"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_first_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Image prefix</label
+            >
+          </div>
 
+          <div class="mb-6">
+            <label
+              for="base-input"
+              class="block mb-2 text-sm font-medium text-gray-400"
+              >Exit Route</label
+            >
+            <input
+              type="text"
+              id="input_output_path"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+          </div>
+
+          <button
+            id="button__compress_img"
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 w-full mt-5"
+          >
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 w-full"
+            >
+              Compress image
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- End Form -->
+
+    <!-- Start List Images -->
+    <section class="w-full flex justify-center max-h-screen">
+      <ul
+        id="imgs__container"
+        class="w-full max-w-[800px] p-10 divide-y divide-gray-200 dark:divide-gray-700"
+      ></ul>
+    </section>
+    <!-- End List Images -->
+
+    <!-- Initial Scripts -->
+    <script src="./js/global/domElements.js"></script>
+    <!-- State Scripts -->
+    <script src="./js/store/types.js"></script>
+    <script src="./js/store/reducer.js"></script>
+    <script src="./js/store/store.js"></script>
+    <script src="./js/store/subscribe.js"></script>
+    <!-- Events Scripts -->
+    <script src="./js/event/form.js"></script>
+    <!-- Render Scripts -->
+    <script src="./js/render/form.js"></script>
+    <script src="./js/render/imgs.js"></script>
+    <!-- API Scripts -->
+    <script src="./js/api/imgs.js"></script>
+  </body>
 </html>

@@ -8,7 +8,7 @@ To practice the python language, write an image compressor and converter. But I 
 
 # Preview proyect
 
-![preview del proyecto](./assets/doc/Capture.png)
+![preview del proyecto](./assets/Preview.png)
 
 # Steps to run the program.
 
